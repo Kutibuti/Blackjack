@@ -15,13 +15,26 @@ h1 {
     font-style: italic;
 }
 
-#btn-start {
 
+#btn-start {
+    margin-bottom: 1rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     font-size: 2rem;
-    border: 0.5rem;
+    border: none;
     color: #016f32;
     background-color: gold;
     font-weight: 600;
     border-radius:10px;
+    width: 250px;
+}
+
+#btn-addcard {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-size: 2rem;
+    border: none;
+    color: #016f32;
+    background-color: gold;
+    font-weight: 600;
+    border-radius:10px;
+    width: 250px;
 }
