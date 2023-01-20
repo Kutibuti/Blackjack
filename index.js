@@ -83,12 +83,13 @@ function getRandomCard() {
 }
 
 function calculate() {
-    if (drawAgain === true) {
-        for (let i = 1; i<10; i++) {
+
+    if (dealerSum < 17 || dealerSum != 21 || !(dealerSum > 21)) {
+        for (let i = 1; i < 10; i++) {
             dealerCard[i] = getRandomCard()
             dealerEl.textContent += " " + dealerCard[i]
             dealerSum += dealerCard[i]
-            if (dealerSum > 16 && dealerSum < 22) {
+            if ((dealerSum > 16 && dealerSum < 22) || dealerSum > 21) {
                 break
             }
         }
@@ -106,6 +107,15 @@ function calculate() {
         }
     } else if (dealerSum > 16 && dealerSum < 21) {
         if (dealerSum < yourSum && yourSum <= 21) {
+            message = "You've win!"
+            messageEl.textContent = message
+        }
+        else {
+            message = "You've lost!"
+            messageEl.textContent = message
+        }
+    } else if (dealerSum > 21 && yourSum > 21) {
+        if (dealerSum > yourSum) {
             message = "You've win!"
             messageEl.textContent = message
         }
